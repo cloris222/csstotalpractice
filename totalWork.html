@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: 'Inter', sans-serif;
+        box-sizing: border-box;
+        list-style: none;
+      }
+      p {
+        font-family: 'Inter', sans-serif;
+      }
+
+      body {
+        width: 100vw;
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .container-fluid {
+        width: 100vw;
+      }
+      .bg-primary {
+        background-color: rgb(12, 60, 76);
+      }
+      .bg-second {
+        background-color: rgb(6, 28, 35);
+      }
+      .bg-black {
+        background-color: rgb(0, 0, 0);
+      }
+      .text-white {
+        color: #fff;
+      }
+      .text-gray {
+        color: darkgray;
+      }
+      .mx-auto {
+        margin: auto;
+      }
+      .btn {
+        background: linear-gradient(180deg, yellow, rgb(227, 160, 46));
+        width: 90px;
+        height: 30px;
+        font-size: 4px;
+        padding: 0.2rem;
+        font-weight: bolder;
+        border: none;
+      }
+
+      /* 左右icon圓圈 */
+      .left-right-icons::before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+      }
+
+      .left-right-icons::after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+      }
+
+      /* bg_icon */
+      .bg_icon {
+        width: 25px;
+        height: 25px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 5px;
+        text-align: center;
+        line-height: 25px;
+      }
+
+      /* ------------------------------------------------- */
+
+      /* 導覽列 */
+      .nav_bar {
+        position: relative;
+      }
+      .nav_bar .container {
+        position: fixed;
+      }
+
+      .nav_bar .row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav_bar .col {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        padding: 0 1rem;
+      }
+      .nav_bar .col .menuicon {
+        padding-right: 20px;
+      }
+      .nav_bar .col .login_icon {
+        padding-right: 20px;
+      }
+      .logo {
+        padding-top: 5px;
+        width: 160px;
+      }
+      /* 搜尋欄 */
+      .search_bar .col {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 90%;
+        margin: auto;
+      }
+      .search_bar .col input {
+        width: 100%;
+        height: 40px;
+        position: relative;
+      }
+      .search_bar .search_icon {
+        font-size: 20px;
+        text-align: center;
+        line-height: 45px;
+        width: 39px;
+        height: 39px;
+        background: linear-gradient(225deg, yellow, rgb(227, 160, 46));
+        position: absolute;
+        top: 73px;
+        left: 92%;
+      }
+
+      /* 篩選器 */
+      .filter .col {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 90%;
+        margin: auto;
+        position: relative;
+      }
+      .filter .filter_box {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+      }
+
+      /* 卡片(read more) */
+      .section01 .col {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 90%;
+        margin: auto;
+        position: relative;
+      }
+
+      .section01 .col .card {
+        height: 200px;
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(./images/image2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .section01 .card_text {
+        padding-top: 30px;
+        padding-left: 50px;
+        line-height: 1.5;
+      }
+      .section01 .card_text .subtitle {
+        font-size: 6px;
+      }
+      .section01 .card_text .card_title {
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .section01 .card .btn {
+        margin-left: 50px;
+        margin-top: 20px;
+      }
+
+      /* 輪播(deal of the day) */
+      .section02 .row {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        position: relative;
+      }
+
+      .section02 .row:nth-of-type(1)::after {
+        content: '';
+        width: 25%;
+        border-bottom: 2px solid goldenrod;
+        position: absolute;
+        top: 99%;
+        left: 0;
+      }
+
+      .section02 .row .col {
+        padding: 1rem 0.3rem;
+        position: relative;
+      }
+      .section02 .left-right-icons::before {
+        top: 21%;
+        left: -2%;
+      }
+
+      .section02 .left-right-icons::after {
+        top: 21%;
+        left: 65%;
+      }
+
+      .section02 .col .title {
+        font-size: 28px;
+      }
+
+      .section02 .col .fa-arrow-left {
+        margin-right: 30px;
+      }
+
+      .section02 .row:nth-of-type(2) .col {
+        width: 48%;
+      }
+
+      .section02 .col .card {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-flow: column wrap;
+        position: relative;
+        overflow: hidden;
+        margin-top: 1rem;
+      }
+
+      .section02 .col .card::after {
+        content: '';
+        width: 80px;
+        height: 20px;
+        background: linear-gradient(180deg, yellow, rgb(227, 160, 46));
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 4%;
+        left: -10%;
+      }
+
+      .section02 .card .card_img {
+        width: 100%;
+        height: 60%;
+      }
+
+      .section02 .card_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.8);
+      }
+
+      .section02 .card .card_icons {
+        width: 10%;
+        display: flex;
+        flex-flow: column wrap;
+        position: absolute;
+        top: 0;
+        right: 2%;
+      }
+
+      .section02 .card .card_star {
+        padding-top: 1rem;
+        font-size: 12px;
+        color: goldenrod;
+      }
+
+      .section02 .card .card_text {
+        padding-top: 1rem;
+      }
+      .section02 .card .card_text_price {
+        padding-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 導覽列 -->
+    <div class="nav_bar w-100 bg-primary text-white">
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col">
+            <div class="menuicon">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="logo">
+              <a href="#"
+                ><img
+                  src="./images/steamlogo.png"
+                  alt="steam"
+                  title="steam"
+                  class="w-100"
+              /></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="login_icon">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="shoppingcart_icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 搜尋欄 -->
+    <div class="search_bar w-100 bg-second">
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col">
+            <input type="text" placeholder="Search products..." />
+            <div class="search_icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 篩選器 -->
+    <div class="filter w-100 bg-second text-white">
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col">
+            <div class="filter_box bg-primary">
+              <p>SELECT CATEGORY</p>
+              <div class="filter_icon">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 卡片(read more) -->
+    <div class="section01 w-100 bg-second">
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col">
+            <div class="card w-100">
+              <div class="card_text text-white">
+                <p class="subtitle">SAVE UP TO 20% AND MORE</p>
+                <p class="card_title">
+                  Famous Ultimate<br />
+                  Game Sale
+                </p>
+              </div>
+              <input type="button" value="READ MORE" class="btn" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 輪播(deal of the day) -->
+    <div class="section02 w-100 bg-second">
+      <div class="container-fluid">
+        <!-- Deal of the day -->
+        <div class="row w-100">
+          <div class="col">
+            <p class="title text-white">Deal Of The Day</p>
+          </div>
+          <div class="col left-right-icons text-white">
+            <i class="fa-solid fa-arrow-left"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <!-- 卡片區(行動版*2，電腦版*4) -->
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card_img">
+                <img src="./images/image3.jpg" />
+              </div>
+              <div class="card_icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card_star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="card_text">
+                <div class="card_text_title text-white">
+                  <p>Raiden Shogun</p>
+                </div>
+                <div class="card_text_price">
+                  <del class="text-gray">$200.00</del>
+                  <span class="text-white">$150.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card_img">
+                <img src="./images/image1.jpg" />
+              </div>
+              <div class="card_icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card_star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="card_text">
+                <div class="card_text_title text-white">
+                  <p>Long Time Lover</p>
+                </div>
+                <div class="card_text_price">
+                  <del class="text-gray">$500.00</del>
+                  <span class="text-white">$400.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 滿版卡片(shop now) -->
+    <!-- 卡片(extra $100) -->
+    <!-- 促銷卡片*2 -->
+    <!-- 卡片(equipment for pro gaming) -->
+    <!-- 輪播(newest product) -->
+    <!-- 卡片(about our company) -->
+    <!-- 卡片(equipment for pro gaming) -->
+    <!-- 輪播(featured product) -->
+    <!-- 輪播按鈕 -->
+    <!-- 輪播(from the blog) -->
+    <!-- footer -->
+  </body>
+</html>
