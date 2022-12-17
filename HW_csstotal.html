@@ -843,6 +843,103 @@
         line-height: 60px;
         background-color: rgb(6, 28, 35);
       }
+
+      /* section09 輪播(from the blog)*/
+      .section09 .area1 {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        position: relative;
+      }
+
+      .section09 .area1::after {
+        content: '';
+        width: 25%;
+        border-bottom: 2px solid goldenrod;
+        position: absolute;
+        top: 99%;
+        left: 0;
+      }
+
+      .section09 .area1 .col {
+        width: 80%;
+        padding: 1rem 0;
+        position: relative;
+      }
+
+      .section09 .area1 .col .title {
+        font-size: 24px;
+        font-weight: bolder;
+      }
+
+      .section09 .area1 .col:nth-of-type(2) {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .section09 .left-right-icons::before {
+        top: 22%;
+        left: -6%;
+      }
+
+      .section09 .left-right-icons::after {
+        top: 22%;
+        left: 78%;
+      }
+      /* 輪播 */
+      .section09 .area2 {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .section09 .col-img {
+        width: 100%;
+        height: 350px;
+      }
+
+      .section09 .col-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 75% 50%;
+      }
+
+      .section09 .col-text {
+        margin: 1rem 0;
+        position: relative;
+      }
+
+      .section09 .col-text::after {
+        content: '';
+        width: 20px;
+        border-bottom: 2px solid goldenrod;
+        position: absolute;
+        top: 10%;
+        left: 0;
+      }
+
+      .section09 .col-text .text-date {
+        font-size: 6px;
+        margin-bottom: 1rem;
+        padding-left: 30px;
+      }
+      .section09 .col-text .text-title {
+        letter-spacing: 1px;
+      }
+
+      .section09 .col-btn .btn {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+      }
     </style>
   </head>
   <body>
@@ -940,7 +1037,7 @@
           </div>
         </div>
         <!-- 卡片區(行動版*2，電腦版*4) -->
-        <div class="area2 row bg-second">
+        <div class="area2 row">
           <!-- 卡片1 -->
           <div class="col">
             <div class="card">
@@ -1348,6 +1445,27 @@
     <div class="section09 w-100 bg-second">
       <div class="container-fluid">
         <!-- 標題(from the blog) -->
+        <div class="area1 row">
+          <div class="col">
+            <p class="title text-white">From the blog</p>
+          </div>
+          <div class="col left-right-icons text-white">
+            <i class="fa-solid fa-arrow-left"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <div class="area2 row">
+          <div class="col-img">
+            <img src="./images/image13.jpg" />
+          </div>
+          <div class="col-text text-white">
+            <p class="text-date">December 18,2022</p>
+            <p class="text-title">Welcome to the world of Genshin Impact</p>
+          </div>
+          <div class="col-btn">
+            <input type="button" value="Read More" class="btn" />
+          </div>
+        </div>
       </div>
     </div>
     <!-- footer -->
