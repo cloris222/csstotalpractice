@@ -14,7 +14,6 @@
     <style>
       /* 通用類別 */
       * {
-        font-family: 'Inter', sans-serif;
         box-sizing: border-box;
         list-style: none;
         font-family: 'Inter', sans-serif;
@@ -31,6 +30,9 @@
       body {
         display: flex;
         flex-flow: column wrap;
+        background: linear-gradient(180deg, rgba(22, 28, 43, 0.1) ,rgba(22, 28, 43, 0.1)),url(./images/stars-1654074.jpg);
+        background-size: contain;
+        background-attachment: fixed;
       }
 
       .w-100 {
@@ -39,12 +41,25 @@
       .container-fluid {
         width: 100%;
       }
+
+      .margin-right-half{
+        margin-right: 0.5rem;
+      }
+
+      .margin-right-1{
+        margin-right: 1rem;
+      }
+
+      .margin-right-2{
+        margin-right: 2rem;
+      }
+
       .bg-primary {
         background-color: rgba(12, 60, 76, 0.8);
       }
-      .bg-second {
+      /* .bg-second {
         background-color: rgb(6, 28, 35);
-      }
+      } */
       .bg-black {
         background-color: rgb(0, 0, 0);
       }
@@ -54,8 +69,8 @@
       .text-gray {
         color: darkgray;
       }
-      .mx-auto {
-        margin: auto;
+      .text-gold{
+        color:goldenrod
       }
 
       .btn {
@@ -66,6 +81,12 @@
         padding: 0.2rem;
         font-weight: bolder;
         border: none;
+      }
+
+      .btn:hover{
+        background: black;
+        color: white;
+        cursor: pointer;
       }
 
       /* 左右icon圓圈 */
@@ -97,6 +118,38 @@
         line-height: 25px;
       }
       /* ------------------------------------------------- */
+      
+      /* pre_nav_bar */
+      .pre_nav_bar{
+        display: none;
+      }
+      .pre_nav_bar .row{
+       width:90%;
+       margin: auto;
+       display:flex;
+       justify-content: space-between;
+       align-items: center;
+       font-family:'Inter', sans-serif ;
+      }
+
+      .pre_nav_bar .row .col{
+        width: 50%;
+        display: flex;
+        padding: 1rem;
+      }
+
+      .pre_nav_bar .row .col:nth-of-type(2){
+       justify-content: end;
+      }
+
+      .pre_nav_bar .col .col-items{
+        display: flex;
+      }
+
+      .pre_nav_bar .col .col-compare,.pre_nav_bar .col .col-wishlist{
+        justify-content: end;
+      }
+
       /* 導覽列 */
       .nav_bar {
         position: fixed;
@@ -117,6 +170,10 @@
         font-size: 20px;
         padding: 0 1rem;
       }
+
+      .nav_bar .col .menulist{
+        display:none;
+      }
       .nav_bar .col .menuicon {
         padding-right: 20px;
       }
@@ -128,31 +185,40 @@
         width: 160px;
       }
 
+      .login-text,.login-text-icon,.shoppingcart-text{
+        display:none
+      }
+
       /* 搜尋欄 */
       .search_bar {
         margin-top: 57px;
       }
+
       .search_bar .col {
         padding-top: 1rem;
         padding-bottom: 1rem;
         width: 90%;
         margin: auto;
+        display: flex;
       }
+
+      .search_bar .col:nth-of-type(2){
+        display: none;
+      }
+
       .search_bar .col input {
-        width: 100%;
+        width: 92%;
         height: 40px;
-        position: relative;
+        border:3px solid goldenrod
       }
       .search_bar .search_icon {
         font-size: 20px;
         text-align: center;
-        line-height: 45px;
-        width: 39px;
-        height: 39px;
+        line-height: 40px;
+        width: 8%;
+        height: 40px;
         background: linear-gradient(225deg, yellow, rgb(227, 160, 46));
-        position: absolute;
-        top: 73px;
-        left: 88%;
+        border: 0;
       }
 
       /* 篩選器 */
@@ -940,9 +1006,307 @@
         height: 35px;
         font-size: 14px;
       }
+
+      /* footer */
+      .footer .row {
+        display: flex;
+        flex-flow: column wrap;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .footer .area1 {
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid lightgray;
+        padding-top: 1.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer .area1 .col {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .footer .area1 .col-title {
+        font-size: 20px;
+        font-weight: bolder;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer .area1 .title-icon {
+        font-size: 30px;
+        margin-right: 1rem;
+      }
+
+      .footer .area2 {
+        width: 100%;
+        margin: auto;
+        border-bottom: 1px solid lightgray;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items: center;
+      }
+
+      .footer .area2 .col {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .footer .area2 .col::after {
+        content: '';
+        width: 40px;
+        border-bottom: 3px solid goldenrod;
+        position: absolute;
+        top: 68%;
+        left: 0;
+      }
+
+      .footer .area2 .col ~ .col {
+        margin-top: 0.5rem;
+      }
+
+      .footer .col-input{
+        width: 100%;
+      }
+
+      .footer .col-input input{
+        width: 100%;
+        height: 50px;
+        border: 3px solid goldenrod;
+      }
+
+      .footer .col-btn .btn{
+        width: 130px;
+        height: 50px;
+      }
+
+      .footer .area3{
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer .col-copyright{
+        width:100%;
+        margin: 1rem 0;
+        font-size: 12px;
+        line-height: 12px;
+      }
+      .footer .col-icons{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom:2rem ;
+      }
+
+      .footer .col-icons .icon-bankcard{
+        width: 12%;
+      }
+
+      .footer .col-icons .icon-bankcard img{
+        width: 100%;
+      }
+
+      /* 響應式-------------------------------------------------------- */
+      @media (min-width: 1200px) {
+        
+      /* pre_nav_bar */
+      .pre_nav_bar{
+        display: block;
+      }
+
+      .pre_nav_bar .row{
+        width: 80%;
+      }
+
+      .pre_nav_bar .col-items:hover{
+        color: goldenrod;
+        cursor: pointer;
+      }
+
+      /* 導覽列 */
+      .nav_bar{
+        position: fixed;
+        top:5%;
+        height: 100px;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .nav_bar .container-fluid{
+        height: 100%;
+      }
+
+      .nav_bar .row{
+        width: 80%;
+        margin: auto;
+        height: 100%;
+      }
+
+      .nav_bar .row .col{
+        height: 100%;
+        font-size: 24px;
+      }
+
+      .nav_bar .col .menuicon{
+        display:none;
+      }
+
+      .nav_bar .logo{
+        width: 200px;
+      }
+
+      .nav_bar .col .menulist{
+        display: flex;
+      }
+
+      .nav_bar .menulist li{
+        font-size: 16px;
+        margin-right: 2rem;
+        line-height: 16px;
+        text-align:center;
+      }
+
+      .nav_bar .menulist li:hover{
+        color: goldenrod;
+        cursor: pointer;
+      }
+
+      .nav_bar .menulist li .fa-chevron-down{
+        margin-left:0.5rem;
+        font-size: 12px;
+      }
+
+      .nav_bar .col:nth-of-type(3){
+        font-size: 16px;
+      }
+
+      .shoppingcart-text{
+        position: relative;
+      }
+
+      .shoppingcart-text::after{
+        content:'0';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: black;
+        text-align: center;
+        line-height: 20px;
+        font-weight: bolder;
+        background: linear-gradient(180deg, yellow, rgb(227, 160, 46));
+        position: absolute;
+        top: -14%;
+        left: 112%;
+      }
+
+      .login-text,.login-text-icon,.shoppingcart-text{
+        display:block
+      }
+
+      /* 搜尋欄 */
+
+      .search_bar {
+        margin-top: 114px;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .search_bar .row{
+        width: 80%;
+        margin: auto;
+        display: flex;
+      }
+
+      .search_bar .col:nth-of-type(1){
+        width: 50%;
+      }
+
+      .search_bar .col:nth-of-type(2){
+        display:flex;
+        justify-content: end;
+      }
+
+      .search_bar .col .col-item{
+        display: flex;
+        margin-right: 3rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .search_bar .col .col-item .item-text{
+        width: 100px;
+        font-size: 14px;
+      }
+
+      .search_bar .col .col-item .item-icon{
+        font-size: 28px;
+        margin-right: 2rem;
+        position: relative;
+        text-align: center;
+      }
+
+      .search_bar .col .col-item .item-icon::after{
+        content: '';
+        width: 50px;
+        height: 50px;
+        border: 2px dashed white;
+        border-radius: 50%;
+        position: absolute;
+        top: -13px;
+        left:-14px;
+      }
+
+      /* 篩選器 */
+      
+      
+       }
+
     </style>
   </head>
   <body>
+    <!-- pre_nav_bar -->
+    <div class="pre_nav_bar w-100 ">
+      <div class="container-fluid">
+        <div class="row text-white">
+          <div class="col">
+            <div class="col-phone col-items margin-right-2">
+              <div class="phone-icons margin-right-1">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="phone-text">(+00)087 187 487</div>
+            </div>
+            <div class="col-email col-items">
+              <div class="email-icons margin-right-1">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="email-text">cloris222@gmail.com</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="col-compare col-items margin-right-2">
+              <div class="compare-icons margin-right-1">
+                <i class="fa-solid fa-repeat"></i>
+              </div>
+              <div class="compare-text">Compare</div>
+            </div>
+            <div class="col-wishlist col-items">
+              <div class="wishlist-icons margin-right-1">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <div class="wishlist-text">Wishlist</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 導覽列 -->
     <div class="nav_bar w-100 bg-primary text-white">
       <div class="container-fluid">
@@ -962,25 +1326,66 @@
             </div>
           </div>
           <div class="col">
+              <ul class="menulist text-white">
+                <li>HOME</li>
+                <li>SHOP<i class="fa-solid fa-chevron-down"></i></li>
+                <li>BLOG<i class="fa-solid fa-chevron-down"></i></li>
+                <li>MEDIA<i class="fa-solid fa-chevron-down"></i></li>
+                <li>SHORTCODE<i class="fa-solid fa-chevron-down"></i></li>
+                <li>MORE</li>
+              </ul>
+          </div>
+          <div class="col">
             <div class="login_icon">
               <i class="fa-regular fa-user"></i>
             </div>
-            <div class="shoppingcart_icon">
+            <div class="login-text text-white margin-right-half">My Account</div>
+            <div class="login-text-icon">
+              <i class="fa-solid fa-chevron-down margin-right-1"></i>
+            </div>
+            <div class="shoppingcart_icon margin-right-half">
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
+            <div class="shoppingcart-text text-white">$0.00</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- 搜尋欄 -->
-    <div class="search_bar w-100 bg-second">
+    <div class="search_bar w-100 ">
       <div class="container-fluid">
         <div class="row w-100">
-          <div class="col mx-auto">
+          <div class="col w-100">
             <input type="text" placeholder="Search products..." />
             <div class="search_icon">
               <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <div class="col">
+            <div class="col-item">
+              <div class="item-icon text-gold">
+                <i class="fa-solid fa-hand-fist"></i>
+              </div>
+              <div class="item-text text-white">
+                Special Flat Guarantee
+              </div>
+            </div>
+            <div class="col-item">
+              <div class="item-icon text-gold">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </div>
+              <div class="item-text text-white">
+                Money Back Guarantee
+              </div>
+            </div>
+            <div class="col-item">
+              <div class="item-icon text-gold">
+                <i class="fa-solid fa-bullhorn"></i>
+              </div>
+              <div class="item-text text-white">
+                Free Shipping Worldwide
+              </div>
             </div>
           </div>
         </div>
@@ -988,7 +1393,7 @@
     </div>
 
     <!-- 篩選器 -->
-    <div class="filter w-100 bg-second text-white">
+    <div class="filter w-100  text-white">
       <div class="container-fluid">
         <div class="row w-100">
           <div class="col">
@@ -1004,7 +1409,7 @@
     </div>
 
     <!-- 卡片(read more) -->
-    <div class="section01 w-100 bg-second">
+    <div class="section01 w-100 ">
       <div class="container-fluid">
         <div class="row w-100">
           <div class="col">
@@ -1024,7 +1429,7 @@
     </div>
 
     <!-- 輪播 (deal of the day)-->
-    <div class="section02 w-100 bg-second">
+    <div class="section02 w-100 ">
       <div class="container-fluid">
         <!-- 標題(Deal of the day) -->
         <div class="area1 row">
@@ -1137,7 +1542,7 @@
       </div>
     </div>
     <!-- 促銷卡片*2 -->
-    <div class="section04 w-100 bg-second">
+    <div class="section04 w-100 ">
       <div class="container-fluid">
         <div class="area1 row">
           <div class="col">
@@ -1166,7 +1571,7 @@
       </div>
     </div>
     <!-- 卡片(equipment for pro gaming)+輪播 -->
-    <div class="section05 w-100 bg-second">
+    <div class="section05 w-100 ">
       <div class="container-fluid">
         <!-- 卡片 -->
         <div class="card-area row">
@@ -1186,7 +1591,7 @@
           </div>
         </div>
         <!-- 標題(newest product) -->
-        <div class="area1 row bg-second">
+        <div class="area1 row ">
           <div class="col">
             <p class="title text-white">Newest Products</p>
           </div>
@@ -1196,7 +1601,7 @@
           </div>
         </div>
         <!-- 卡片區(行動版*2，電腦版*4) -->
-        <div class="area2 row bg-second">
+        <div class="area2 row ">
           <!-- 卡片1 -->
           <div class="col">
             <div class="card">
@@ -1318,7 +1723,7 @@
       </div>
     </div>
     <!-- 卡片(equipment for pro gaming)+輪播 -->
-    <div class="section07 w-100 bg-second">
+    <div class="section07 w-100 ">
       <div class="container-fluid">
         <!-- 卡片 -->
         <div class="card-area row">
@@ -1338,7 +1743,7 @@
           </div>
         </div>
         <!-- 標題(Featured product) -->
-        <div class="area1 row bg-second">
+        <div class="area1 row ">
           <div class="col">
             <p class="title text-white">Featured Products</p>
           </div>
@@ -1348,7 +1753,7 @@
           </div>
         </div>
         <!-- 卡片區(行動版*2，電腦版*4) -->
-        <div class="area2 row bg-second">
+        <div class="area2 row ">
           <!-- 卡片1 -->
           <div class="col">
             <div class="card">
@@ -1429,7 +1834,7 @@
       </div>
     </div>
     <!-- 輪播按鈕 -->
-    <div class="section08 w-100 bg-second">
+    <div class="section08 w-100 ">
       <div class="container-fluid">
         <div class="row">
           <div class="col">
@@ -1442,7 +1847,7 @@
       </div>
     </div>
     <!-- 輪播(from the blog) -->
-    <div class="section09 w-100 bg-second">
+    <div class="section09 w-100 ">
       <div class="container-fluid">
         <!-- 標題(from the blog) -->
         <div class="area1 row">
@@ -1469,5 +1874,74 @@
       </div>
     </div>
     <!-- footer -->
+    <div class="footer w-100 bg-primary">
+      <div class="container-fluid">
+        <div class="area1 row">
+          <div class="col-title col">
+            <i class="fa-regular fa-envelope title-icon text-white"></i>
+            <div class="title-text text-white">
+              Sign Up Newslatter
+            </div>
+          </div>
+          <div class="col-input col">
+            <input type="text" placeholder="Your email address" />
+          </div>
+          <div class="col-btn col">
+            <input type="button" value="SIGN UP" class="btn" />
+          </div>
+        </div>
+        <div class="area2 row">
+          <div class="col">
+            <div class="col-text text-white">Contact Us</div>
+            <div class="col-icon text-white">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="col">
+            <div class="col-text text-white">Our Services</div>
+            <div class="col-icon text-white">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="col">
+            <div class="col-text text-white">Information</div>
+            <div class="col-icon text-white">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="col">
+            <div class="col-text text-white">My Account</div>
+            <div class="col-icon text-white">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="area3 row ">
+          <div class="col-copyright text-white">
+            Copyright © 2022 YungChien. All rights reserved.
+          </div>
+          <div class="col-icons">
+            <div class="icon-bankcard">
+              <img src="./images/imagebank1.jpeg">
+            </div>
+            <div class="icon-bankcard">
+              <img src="./images/imagebank2.png">
+            </div>
+            <div class="icon-bankcard">
+              <img src="./images/imagebank3.jpeg">
+            </div>
+            <div class="icon-bankcard">
+              <img src="./images/imagebank4.png">
+            </div>
+            <div class="icon-bankcard">
+              <img src="./images/imagebank1.jpeg">
+            </div>
+            <div class="icon-bankcard">
+              <img src="./images/imagebank2.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
