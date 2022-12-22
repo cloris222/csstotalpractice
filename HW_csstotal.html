@@ -223,11 +223,15 @@
 
       /* 篩選器 */
       .filter .col {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         width: 90%;
         margin: auto;
         position: relative;
+      }
+
+      .filter .col:nth-of-type(2){
+        display: none;
       }
       .filter .filter_box {
         width: 100%;
@@ -259,6 +263,7 @@
         background-repeat: no-repeat;
         display: flex;
         flex-flow: column wrap;
+        justify-content: center;
       }
       .section01 .card_text {
         padding-top: 30px;
@@ -1264,8 +1269,128 @@
         left:-14px;
       }
 
+      /* 篩選器+卡片 */
+      .filter_card{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        font-family: 'Inter', sans-serif;
+
+      }
+
       /* 篩選器 */
-      
+
+      .filter_card .filter{
+       width: 20%;
+       margin-bottom: 4rem;
+      }
+      .filter_card .filter .col{
+        width: 100%;
+        margin: 0;
+      }
+
+      .filter_card .filter .col:nth-of-type(2){
+        display: block;
+      }
+
+      .filter_card .filter .filter_box{
+      flex-direction: row-reverse;
+      justify-content: start;
+      }
+
+      .filter .filter_box .filter_icon{
+        margin-right:1rem
+      }
+
+      .filter_card .filter .filter-list{
+        width: 90%;
+        margin-left: 5%;
+      }
+
+      .filter-list .list-item{
+        height: 30px;
+        border-bottom: 1px solid lightgray;
+        margin-top: 1rem;
+      }
+
+      .filter-list .list-item:nth-of-type(2){
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .filter-list .list-item:nth-last-of-type(1){
+        border: 0;
+      }
+
+       /* 卡片 */
+       .filter_card .section01{
+        width: 80%;
+       }
+
+       .filter_card .section01 .col{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+       }
+
+       .section01 .col .card{
+        width: 100%;
+        height: 532px;
+       }
+
+       .section01 .card_text .subtitle {
+        font-size: 14px;
+        font-weight: bolder;
+      }
+      .section01 .card_text .card_title {
+        font-size: 52px;
+      }
+      .section01 .card .btn {
+       width: 120px;
+       height: 40px;
+      }
+
+      /* 輪播 */
+      .section02 .area1{
+        width: 80%;
+      }
+
+      .section02 .area1::after{
+        content: '';
+        width: 5%;
+      }
+
+      .section02 .area1 .col:nth-of-type(2){
+        display: none;
+      }
+
+      .section02 .area2{
+        width: 80%;
+      }
+
+      .section02 .area2 .col{
+        width: 17.6%; 
+        margin-right: 3%;
+      }
+
+      .section02 .area2 .col:nth-last-of-type(1){
+        margin: 0;
+      }
+
+      .section02 .area2 .col .card{
+        width:100%;
+        height: 500px;
+      }
+
+      .section02 .col .card::after{
+        top: 2%;
+        left: -8%;
+      }
+
+      .section02 .card .card-icons{
+        display: none;
+      }
+        
       
        }
 
@@ -1392,22 +1517,39 @@
       </div>
     </div>
 
+    
     <!-- 篩選器 -->
+    <div class="filter_card">
     <div class="filter w-100  text-white">
       <div class="container-fluid">
-        <div class="row w-100">
-          <div class="col">
-            <div class="filter_box bg-primary">
+        <div class="row w-100 ">
+          <div class="col bg-primary">
+            <div class="filter_box ">
               <p>SELECT CATEGORY</p>
               <div class="filter_icon">
                 <i class="fa-solid fa-bars"></i>
               </div>
             </div>
           </div>
+          <div class="col bg-primary">
+              <ul class="filter-list text-white">
+                <li class="list-item">Adventure</li>
+                <li class="list-item">
+                  <div class="item-text">Bubble shooter</div>
+                <div class="item-icon"><i class="fa-solid fa-chevron-right"></i></div></li>
+                <li class="list-item">Car racing</li>
+                <li class="list-item">Honor game</li>
+                <li class="list-item">Magicka 2</li>
+                <li class="list-item">Robot game</li>
+                <li class="list-item">Scope game</li>
+                <li class="list-item">Shoot game</li>
+                <li class="list-item">Snack race</li>
+                <li class="list-item">More</li>
+              </ul>
+          </div>
         </div>
       </div>
     </div>
-
     <!-- 卡片(read more) -->
     <div class="section01 w-100 ">
       <div class="container-fluid">
@@ -1427,6 +1569,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <!-- 輪播 (deal of the day)-->
     <div class="section02 w-100 ">
@@ -1482,6 +1625,120 @@
             </div>
           </div>
           <!-- 卡片2 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image1.jpg" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-gray"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Long Time Lover</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$500.00</del>
+                  <span class="text-white">$400.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片3 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image1.jpg" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-gray"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Long Time Lover</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$500.00</del>
+                  <span class="text-white">$400.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片4 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image1.jpg" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-gray"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Long Time Lover</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$500.00</del>
+                  <span class="text-white">$400.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片5 -->
           <div class="col">
             <div class="card">
               <div class="card-img">
