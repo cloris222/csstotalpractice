@@ -372,6 +372,7 @@
         height: 60%;
       }
 
+
       .section02 .card-img img {
         width: 100%;
         height: 100%;
@@ -403,6 +404,12 @@
         padding-top: 1rem;
       }
 
+      .section02 .area2 .col:nth-of-type(3),
+      .section02 .area2 .col:nth-of-type(4),
+      .section02 .area2 .col:nth-of-type(5){
+        display: none;
+      }
+
       /* section03 滿版卡片(extra $100) */
       .section03 .row {
         display: flex;
@@ -412,8 +419,13 @@
         padding-bottom: 1rem;
       }
       .section03 .row .col {
+        width: 80%;
         text-align: center;
         padding-top: 1rem;
+      }
+
+      .section03 .row .col:nth-of-type(1){
+        display:none;
       }
 
       .section03 .col .text {
@@ -601,6 +613,11 @@
         padding-bottom: 1rem;
       }
 
+      .section05 .area2 .col:nth-of-type(3),
+      .section05 .area2 .col:nth-of-type(4){
+        display: none;
+      }
+
       .section05 .area2 .col .card {
         width: 100%;
         height: 300px;
@@ -669,6 +686,7 @@
         flex-flow: column wrap;
         margin-top: 1rem;
         padding-bottom: 1rem;
+
       }
 
       .section06 .row .col {
@@ -678,10 +696,12 @@
       .section06 .img-area {
         width: 100%;
         height: 300px;
+        margin-bottom: 1rem;
       }
 
       .section06 .img-area img {
-        width: 100%;
+        width: 90%;
+        margin: 1rem 5% ;
         height: 100%;
         object-fit: cover;
         object-position: 50% 0;
@@ -691,6 +711,7 @@
       .section06 .text-area {
         width: 100%;
         margin-top: 1rem;
+        padding-left: 1rem;
       }
 
       .section06 .text-area .text-title {
@@ -741,6 +762,11 @@
         height: 350px;
         display: flex;
         margin-top: 1rem;
+      }
+
+      .section07 .area2 .col:nth-of-type(3),
+      .section07 .area2 .col:nth-of-type(4){
+        display: none;
       }
 
       .section07 .card-area .col .card {
@@ -1373,8 +1399,24 @@
         margin-right: 3%;
       }
 
+      .section02 .area2 .col:nth-of-type(3),
+      .section02 .area2 .col:nth-of-type(4),
+      .section02 .area2 .col:nth-of-type(5){
+        display: flex;
+      }
+
       .section02 .area2 .col:nth-last-of-type(1){
         margin: 0;
+      }
+
+      .section02 .area2 .col:nth-of-type(4) img{
+       object-fit: cover;
+       object-position: 80% 50%;
+      }
+
+      .section02 .area2 .col:nth-of-type(5) img{
+       object-fit: cover;
+       object-position: 70% 50%;
       }
 
       .section02 .area2 .col .card{
@@ -1390,8 +1432,314 @@
       .section02 .card .card-icons{
         display: none;
       }
+
+      /* section03 滿版卡片 */
+      .section03 .row{
+      width: 80%;
+      margin:auto;
+      flex-flow:row nowrap;
+      justify-content:center;
+      padding:2rem 0;
+      }
+
+
+      .section03 .row .col:nth-of-type(1){
+        display:block;
+        width: 15%;
+        font-size: 40px;
+        text-align: right;
+      }
+
+      .section03 .row .col:nth-of-type(2){
+        width: 70%
+      }
+
+      .section03 .col .text{
+        font-size: 36px;
+      }
+
+      .section03 .row .col:nth-of-type(3){
+        width: 15%;
+        text-align: left;
+      }
         
-      
+      /* section04 促銷卡片*2 */
+
+      .section04{
+        margin-top: 2rem;
+        margin-bottom:2rem;
+      }
+      .section04 .container{
+        display:flex;
+        width: 80%;
+        margin: auto;
+        justify-content: space-between;
+      }
+
+      .section04 .row{
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section04 .area1{
+        width: 62%;
+        height: 350px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .section04 .area2{
+        width: 36%;
+        height: 350px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .section04 .area1 .col .text{
+        font-size: 36px;
+      }
+
+      .section04 .area2 .col .text-subtitle {
+        font-size: 18px;
+      }
+      .section04 .area2 .col .text-title {
+        font-size: 36px;
+      }
+
+      /* 卡片(equipment for pro gaming)+輪播 */
+      .section05 .container{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .section05 .container .card-area{
+        width: 18%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .section05 .container .card-area .col{
+       height: 500px;
+      }
+
+      .section05 .card-area .col .card{
+        align-items:start;
+       padding-left: 2rem;
+      }
+
+      .section05 .card-area .card .card-title{
+        text-align:left;
+        font-size:24px;
+        font-weight: bolder;
+        line-height: 1.5;
+      }
+
+      .section05 .card-area .card .card-text {
+        text-align: left;
+      }
+
+      .section05 .area1 .col:nth-of-type(2) {
+        justify-content: end;
+      }
+
+      .section05 .area1 .col:nth-of-type(2) .fa-arrow-right{
+        margin-left:2rem;
+      }
+
+      .section05 .left-right-icons::before {
+        top: 22%;
+        left: 73%;
+      }
+
+      .section05 .left-right-icons::after {
+        top: 22%;
+        left: 92%;
+      }
+
+      .section05 .container .carousel-area{
+        width: 80%;
+        display: flex;
+        flex-flow: column wrap;
+      }
+
+      .section05 .carousel-area .area1{
+        width: 100%; 
+      }
+
+      .section05 .carousel-area .area2{
+        width: 100%;
+      }
+
+      .section05 .area2 .col{
+        width: 23.5%; 
+        margin-right: 2%;
+      }
+
+      .section05 .area2 .col:nth-of-type(3),
+      .section05 .area2 .col:nth-of-type(4){
+        display: flex;
+      }
+
+      .section05 .area2 .col .card{
+        height: 500px;
+      }
+
+      .section05 .area2 .col .card::after{
+        top: 2%;
+        left: -8%;
+      }
+
+      .section05 .card .card-icons{
+        display: none;
+      }
+
+      .section05 .area2 .col:nth-last-of-type(1){
+        margin: 0;
+      }
+
+
+
+      /*section06 卡片(about our company) */
+      .section06 .row{
+        width: 80%;
+        margin: auto;
+        flex-flow:row nowrap
+      }
+
+      .section06 .row .col{
+        width: 50%;
+      }
+
+
+      .section06 .row .img-area{
+       width: 50%;
+       margin-top: 3rem;
+       margin-left: 3rem;
+       height: 500px;
+      }
+
+      .section06 .row .img-area img{
+        width: 90%;
+        height: 80%;
+        object-fit: cover;
+        object-position: 50% 40%;
+      }
+
+      .section06 .row .text-area{
+        width: 50%;
+        height: 500px;
+        margin-top: 4rem;
+        margin-left: 2rem;
+      }
+
+      .section06 .row .text-area .text-title,
+      .section06 .row .text-area .text-medium,
+      .section06 .row .text-area .text-list{
+        margin-bottom: 3rem;
+      }
+
+
+      /* section07 卡片(equipment for pro gaming)+輪播  */
+      .section07{
+        margin-top: 2rem;
+      }
+      .section07 .container{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .section07 .container .card-area{
+        width: 18%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .section07 .container .card-area .col{
+       height: 500px;
+      }
+
+      .section07 .card-area .col .card{
+        align-items:start;
+       padding-left: 2rem;
+      }
+
+      .section07 .card-area .card .card-title{
+        text-align:left;
+        font-size:24px;
+        font-weight: bolder;
+        line-height: 1.5;
+      }
+
+      .section07 .card-area .card .card-text {
+        text-align: left;
+      }
+
+      .section07 .area1 .col:nth-of-type(2) {
+        justify-content: end;
+      }
+
+      .section07 .area1 .col:nth-of-type(2) .fa-arrow-right{
+        margin-left:2rem;
+      }
+
+      .section07 .left-right-icons::before {
+        top: 22%;
+        left: 73%;
+      }
+
+      .section07 .left-right-icons::after {
+        top: 22%;
+        left: 92%;
+      }
+
+      .section07 .container .carousel-area{
+        width: 80%;
+        display: flex;
+        flex-flow: column wrap;
+      }
+
+      .section07 .carousel-area .area1{
+        width: 100%; 
+      }
+
+      .section07 .carousel-area .area2{
+        width: 100%;
+      }
+
+      .section07 .area2 .col{
+        width: 23.5%; 
+        margin-right: 2%;
+      }
+
+      .section07 .area2 .col:nth-of-type(3),
+      .section07 .area2 .col:nth-of-type(4){
+        display: flex;
+      }
+
+      .section07 .area2 .col .card{
+        height: 500px;
+      }
+
+      .section07 .area2 .col .card::after{
+        top: 2%;
+        left: -8%;
+      }
+
+      .section07 .card .card-icons{
+        display: none;
+      }
+
+      .section07 .area2 .col:nth-last-of-type(1){
+        margin: 0;
+      }
+
+
+
+
        }
 
     </style>
@@ -1666,7 +2014,7 @@
           <div class="col">
             <div class="card">
               <div class="card-img">
-                <img src="./images/image1.jpg" />
+                <img src="./images/image10.jpg" />
               </div>
               <div class="card-icons">
                 <div class="bg_icon icon_bag">
@@ -1691,7 +2039,7 @@
               </div>
               <div class="card-text">
                 <div class="card-text-title text-white">
-                  <p>Long Time Lover</p>
+                  <p>Best Partner Paimon</p>
                 </div>
                 <div class="card-text-price">
                   <del class="text-gray">$500.00</del>
@@ -1704,7 +2052,7 @@
           <div class="col">
             <div class="card">
               <div class="card-img">
-                <img src="./images/image1.jpg" />
+                <img src="./images/image5.png" />
               </div>
               <div class="card-icons">
                 <div class="bg_icon icon_bag">
@@ -1729,7 +2077,7 @@
               </div>
               <div class="card-text">
                 <div class="card-text-title text-white">
-                  <p>Long Time Lover</p>
+                  <p>Alchemist Abedo</p>
                 </div>
                 <div class="card-text-price">
                   <del class="text-gray">$500.00</del>
@@ -1742,7 +2090,7 @@
           <div class="col">
             <div class="card">
               <div class="card-img">
-                <img src="./images/image1.jpg" />
+                <img src="./images/image11.jpg" />
               </div>
               <div class="card-icons">
                 <div class="bg_icon icon_bag">
@@ -1767,7 +2115,7 @@
               </div>
               <div class="card-text">
                 <div class="card-text-title text-white">
-                  <p>Long Time Lover</p>
+                  <p>The leader of grass</p>
                 </div>
                 <div class="card-text-price">
                   <del class="text-gray">$500.00</del>
@@ -1781,18 +2129,21 @@
     </div>
 
     <!-- 滿版卡片(shop now) -->
-    <div class="section03 w-100 bg-black">
+    <div class="section03 w-100 ">
       <div class="container-fluid">
-        <div class="row w-100">
-          <div class="col w-100">
-            <div class="text text-white">
+        <div class="row w-100 bg-black">
+          <div class="col">
+            <i class="fa-solid fa-hand-fist text-gold"></i>
+          </div>
+          <div class="col">
+            <div class="text text-white w-100">
               <p>
-                Extra $100 flat free lifetime plan <br />
+                Extra $100 flat free lifetime plan 
                 limited time offer
               </p>
             </div>
           </div>
-          <div class="col w-100">
+          <div class="col">
             <input type="button" value="SHOP NOW" class="btn" />
           </div>
         </div>
@@ -1800,7 +2151,7 @@
     </div>
     <!-- 促銷卡片*2 -->
     <div class="section04 w-100 ">
-      <div class="container-fluid">
+      <div class="container w-100">
         <div class="area1 row">
           <div class="col">
             <div class="text text-white">
@@ -1829,7 +2180,7 @@
     </div>
     <!-- 卡片(equipment for pro gaming)+輪播 -->
     <div class="section05 w-100 ">
-      <div class="container-fluid">
+      <div class="container w-100">
         <!-- 卡片 -->
         <div class="card-area row">
           <div class="col">
@@ -1847,8 +2198,9 @@
             </div>
           </div>
         </div>
-        <!-- 標題(newest product) -->
-        <div class="area1 row ">
+        <div class="carousel-area">
+         <!-- 標題(newest product) -->
+         <div class="area1 row ">
           <div class="col">
             <p class="title text-white">Newest Products</p>
           </div>
@@ -1856,9 +2208,9 @@
             <i class="fa-solid fa-arrow-left"></i>
             <i class="fa-solid fa-arrow-right"></i>
           </div>
-        </div>
-        <!-- 卡片區(行動版*2，電腦版*4) -->
-        <div class="area2 row ">
+         </div>
+         <!-- 卡片區(行動版*2，電腦版*4) -->
+         <div class="area2 row ">
           <!-- 卡片1 -->
           <div class="col">
             <div class="card">
@@ -1935,13 +2287,91 @@
               </div>
             </div>
           </div>
-        </div>
+          <!-- 卡片3 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image8.jfif" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Kamisato Ayaka</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$101.00</del>
+                  <span class="text-white">$88.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片4 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image9.jpg" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Dancer Nilou</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$101.00</del>
+                  <span class="text-white">$88.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+      </div>
       </div>
     </div>
-    <!-- 卡片(about our company) -->
-    <div class="section06 w-100 bg-primary">
+
+    <!--section06 卡片(about our company) -->
+    <div class="section06 w-100 ">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row bg-primary">
           <div class="img-area col">
             <img src="./images/image10.jpg" />
           </div>
@@ -1972,16 +2402,17 @@
                 </li>
               </ul>
             </div>
+            <div class="btn-area ">
+              <input type="button" value="SHOP NOW" class="btn" />
+            </div>
           </div>
-          <div class="btn-area col">
-            <input type="button" value="SHOP NOW" class="btn" />
-          </div>
+          
         </div>
       </div>
     </div>
     <!-- 卡片(equipment for pro gaming)+輪播 -->
     <div class="section07 w-100 ">
-      <div class="container-fluid">
+      <div class="container w-100">
         <!-- 卡片 -->
         <div class="card-area row">
           <div class="col">
@@ -1999,6 +2430,7 @@
             </div>
           </div>
         </div>
+        <div class="carousel-area">
         <!-- 標題(Featured product) -->
         <div class="area1 row ">
           <div class="col">
@@ -2087,6 +2519,83 @@
               </div>
             </div>
           </div>
+          <!-- 卡片3 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image11.jpg" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-gray"></i>
+                <i class="fa-solid fa-star text-gray"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Grass Nahida</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$95.00</del>
+                  <span class="text-white">$90.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片4 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img">
+                <img src="./images/image12.jpg" />
+              </div>
+              <div class="card-icons">
+                <div class="bg_icon icon_bag">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="bg_icon icon_eye">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="bg_icon icon_heart">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="bg_icon icon_return">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+              <div class="card-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-gray"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-text-title text-white">
+                  <p>Yae Miko</p>
+                </div>
+                <div class="card-text-price">
+                  <del class="text-gray">$500.00</del>
+                  <span class="text-white">$400.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
