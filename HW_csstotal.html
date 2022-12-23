@@ -929,6 +929,13 @@
         height: 70px;
       }
 
+      .section08 .row .col:nth-of-type(3),
+      .section08 .row .col:nth-of-type(4),
+      .section08 .row .col:nth-of-type(5),
+      .section08 .row .col:nth-of-type(6){
+        display: none;
+      }
+
       .section08 .col .carousel-btn {
         width: 100%;
         height: 100%;
@@ -938,7 +945,13 @@
         border: 1px solid lightgray;
         text-align: center;
         line-height: 60px;
-        background-color: rgb(6, 28, 35);
+        background-color: transparent;
+      }
+
+      .section08 .col .carousel-btn:hover{
+        color: goldenrod;
+        border-color: goldenrod;
+        cursor: pointer;
       }
 
       /* section09 輪播(from the blog)*/
@@ -1514,6 +1527,10 @@
         justify-content: space-between;
       }
 
+      .section05 .area1::after{
+        width: 5%;
+      }
+
       .section05 .container .card-area{
         width: 18%;
         padding: 0;
@@ -1525,7 +1542,7 @@
       }
 
       .section05 .card-area .col .card{
-        align-items:start;
+      align-items:start;
        padding-left: 2rem;
       }
 
@@ -1652,6 +1669,10 @@
         justify-content: space-between;
       }
 
+      .section07 .area1::after{
+        width: 5%;
+      }
+
       .section07 .container .card-area{
         width: 18%;
         padding: 0;
@@ -1737,7 +1758,43 @@
         margin: 0;
       }
 
+      /* section08輪播按鈕 */
 
+      .section08 .row{
+        width: 80%;
+      }
+
+      .section08 .row .col{
+        margin-right: 3%;
+      }
+
+      .section08 .row .col:nth-of-type(3),
+      .section08 .row .col:nth-of-type(4),
+      .section08 .row .col:nth-of-type(5),
+      .section08 .row .col:nth-of-type(6){
+        display: block;
+      }
+
+      .section08 .row .col:nth-last-of-type(1){
+        margin: 0;
+      }
+
+     /* section09輪播(from the blog) */
+     .section09 .row{
+      width: 80%;
+     }
+
+     .section09 .area1::after{
+      width: 5%;
+     }
+
+     .section09 .area2{
+      flex-flow:row nowrap
+     }
+
+     .section09 .area2 .card{
+      width: 50%;
+     }
 
 
        }
@@ -2410,7 +2467,7 @@
         </div>
       </div>
     </div>
-    <!-- 卡片(equipment for pro gaming)+輪播 -->
+    <!-- section07卡片(equipment for pro gaming)+輪播 -->
     <div class="section07 w-100 ">
       <div class="container w-100">
         <!-- 卡片 -->
@@ -2599,7 +2656,7 @@
         </div>
       </div>
     </div>
-    <!-- 輪播按鈕 -->
+    <!-- section08輪播按鈕 -->
     <div class="section08 w-100 ">
       <div class="container-fluid">
         <div class="row">
@@ -2609,10 +2666,22 @@
           <div class="col">
             <input type="button" value="Quality" class="carousel-btn" />
           </div>
+          <div class="col">
+            <input type="button" value="Premium" class="carousel-btn" />
+          </div>
+          <div class="col">
+            <input type="button" value="Studios" class="carousel-btn" />
+          </div>
+          <div class="col">
+            <input type="button" value="URBANS" class="carousel-btn" />
+          </div>
+          <div class="col">
+            <input type="button" value="Retros" class="carousel-btn" />
+          </div>
         </div>
       </div>
     </div>
-    <!-- 輪播(from the blog) -->
+    <!-- section09輪播(from the blog) -->
     <div class="section09 w-100 ">
       <div class="container-fluid">
         <!-- 標題(from the blog) -->
@@ -2626,15 +2695,29 @@
           </div>
         </div>
         <div class="area2 row">
-          <div class="col-img">
+           <div class="card">
+             <div class="col-img">
             <img src="./images/image13.jpg" />
-          </div>
-          <div class="col-text text-white">
+             </div>
+             <div class="col-text text-white">
             <p class="text-date">December 18,2022</p>
             <p class="text-title">Welcome to the world of Genshin Impact</p>
-          </div>
-          <div class="col-btn">
+             </div>
+             <div class="col-btn">
             <input type="button" value="Read More" class="btn" />
+             </div>
+           </div>
+           <div class="card">
+            <div class="col-img">
+           <img src="./images/image13.jpg" />
+            </div>
+            <div class="col-text text-white">
+           <p class="text-date">December 18,2022</p>
+           <p class="text-title">Welcome to the world of Genshin Impact</p>
+            </div>
+            <div class="col-btn">
+           <input type="button" value="Read More" class="btn" />
+            </div>
           </div>
         </div>
       </div>
