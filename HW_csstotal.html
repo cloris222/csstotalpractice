@@ -150,6 +150,22 @@
         justify-content: end;
       }
 
+      /* 至頂按鈕 */
+      .toTopBtn{
+        position:fixed;
+        top:93%;
+        left:85%;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        z-index:2000
+      }
+      .toTopBtn:hover .fa-chevron-up{
+        color: #fff;
+      }
+
+
       /* 導覽列 */
       .nav_bar {
         position: fixed;
@@ -1149,10 +1165,9 @@
         border: 3px solid goldenrod;
       }
 
-      .footer .col-btn .btn{
-        width: 130px;
-        height: 50px;
-      }
+      .footer .area2 .col-info{
+        display:none
+       }
 
       .footer .area3{
         width: 100%;
@@ -1184,7 +1199,75 @@
       }
 
       /* 響應式-------------------------------------------------------- */
+      @media (min-width: 768px){
+
+      /* 搜尋欄 */
+      .search_bar {
+        margin-top: 114px;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .search_bar .row{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .search_bar .col:nth-of-type(1){
+        width: 50%;
+      }
+      .search_bar .col:nth-of-type(1) input{
+        width: 60%;
+      }
+      .search_bar .col:nth-of-type(1) .search_icon{
+        width:9%;
+      }
+      .search_bar .col:nth-of-type(2){
+        width: 50%;
+        display:flex;
+        justify-content: end;
+      }
+
+      .search_bar .col .col-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .search_bar .col .col-item .item-text{
+        font-size: 12px;
+      }
+
+      .search_bar .col .col-item .item-icon{
+        font-size: 20px;
+        position: relative;
+        text-align: center;
+      }
+
+      .search_bar .col .col-item .item-icon::after{
+        content: '';
+        width: 50px;
+        height: 50px;
+        border: 2px dashed white;
+        border-radius: 50%;
+        position: absolute;
+        top: -13px;
+        left:-14px;
+      }
+      }
+      
+      
       @media (min-width: 1200px) {
+      
+      /* 至頂按鈕 */
+      .toTopBtn{
+        top:93%;
+        left:96%;
+        width: 35px;
+        height: 35px;
+        border:0;
+      }
         
       /* pre_nav_bar */
       .pre_nav_bar{
@@ -1911,23 +1994,100 @@
       .footer .col-society .society-icon{
         width: 40px;
         height: 40px;
-        background-color: aliceblue;
+        background: aliceblue;
         text-align: center;
         margin-right: 1rem;
         font-size: 16px;
         line-height: 40px;
       }
 
+      .footer .col-society .society-icon:hover{
+        background: linear-gradient(180deg, yellow, rgb(227, 160, 46));
+        cursor: pointer;
+      }
+
       .footer .area2{
         width: 80%;
         margin: auto;
-        flex-direction: row;
+        flex-flow: row nowrap;
        }
+
+       .footer .area2 .col{
+        flex-direction: column;
+       }
+
+       .footer .area2 .col::after {
+        top: 14%;
+        left: 28%;
+       }
+
+       .footer .area2 .col:nth-of-type(1):after {
+        top: 17%;
+        left:0;
+       }
+
+       .footer .area2 .col ~ .col {
+        padding-left: 7rem;
+      }
+
+      .footer .area2 .col:nth-of-type(1){
+        margin-bottom: 3rem;
+      }
+
+      .footer .area2 .col .col-text{
+        font-size: 20px;
+        font-weight: bolder;
+        margin-bottom: 2.5rem;
+      }
+
+
+       .footer .area2 .col-icon{
+        display: none;
+       }
+
+       .footer .area2 .col-info{
+        color: white;
+        display:flex;
+        flex-flow:column wrap;
+        line-height: 1.5;
+        font-size: 14px;
+       }
+
+       .footer .area2 .col-info>*{
+        margin-bottom: 1rem;
+       }
+
+       .footer .area3{
+        width: 80%;
+        margin: auto;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        
+       }
+       
+
+       .footer .col-copyright{
+        width: 80%;
+        text-align:left;
+       }
+
+       .footer .col-icons{
+        margin-top: 1rem;
+        width: 20%;
+       }
+
+       .footer .col-icons .icon-bankcard{
+        width: 12%;
+       }
+
+       
       }
 
     </style>
   </head>
   <body>
+    <!-- 至頂按鈕 -->
+    <button class="btn toTopBtn"><a href="#"><i class="fa-solid fa-chevron-up"></i></a></button>
     <!-- pre_nav_bar -->
     <div class="pre_nav_bar w-100 ">
       <div class="container-fluid">
@@ -2891,6 +3051,11 @@
             <div class="col-icon text-white">
               <i class="fa-solid fa-angle-down"></i>
             </div>
+            <div class="col-info">
+              <div class="info-address">502 New Design Str, Melbourne, San Francisco, CA 94110, United States of America​ Australia</div>
+              <div class="info-phone">(+00)087 187 487</div>
+              <div class="info-mail">cloris222@gmail.com</div>
+            </div>
 
           </div>
           <div class="col">
@@ -2898,17 +3063,38 @@
             <div class="col-icon text-white">
               <i class="fa-solid fa-angle-down"></i>
             </div>
+            <div class="col-info">
+              <div class="info-1">Your Account</div>
+              <div class="info-2">Return Center</div>
+              <div class="info-3">Purchase</div>
+              <div class="info-4">App Download</div>
+              <div class="info-5">Latest News</div>
+            </div>
           </div>
           <div class="col">
             <div class="col-text text-white">Information</div>
             <div class="col-icon text-white">
               <i class="fa-solid fa-angle-down"></i>
             </div>
+            <div class="col-info">
+              <div class="info-1">About Us</div>
+              <div class="info-2">Contact Us</div>
+              <div class="info-3">Terms & Conditions</div>
+              <div class="info-4">Returns & Exchanges</div>
+              <div class="info-5">Shipping & Delivery</div>
+            </div>
           </div>
           <div class="col">
             <div class="col-text text-white">My Account</div>
             <div class="col-icon text-white">
               <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="col-info">
+              <div class="info-1">Order History</div>
+              <div class="info-2">Wishlist</div>
+              <div class="info-3">Contact Us</div>
+              <div class="info-4">About Us</div>
+              <div class="info-5">Our Work</div>
             </div>
           </div>
         </div>
