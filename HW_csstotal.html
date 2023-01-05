@@ -2060,7 +2060,7 @@
         display:block;
         width: 15%;
         font-size: 40px;
-        text-align: right;
+        text-align: center;
       }
 
       .section03 .row .col:nth-of-type(2){
@@ -2241,6 +2241,10 @@
         margin-left: 2rem;
       }
 
+      .section06 .text-area .text-list {
+        padding-bottom: 0;
+      }
+
       .section06 .row .text-area .text-title,
       .section06 .row .text-area .text-medium,
       .section06 .row .text-area .text-list{
@@ -2345,8 +2349,15 @@
         width: 80%;
       }
 
+
       .section08 .row .col{
+        height: 80px;
         margin-right: 3%;
+      }
+
+      .section08 .row .col .carousel-btn{
+        font-size: 30px;
+        line-height: 45px;
       }
 
       .section08 .row .col:nth-of-type(3),
@@ -2354,6 +2365,10 @@
       .section08 .row .col:nth-of-type(5),
       .section08 .row .col:nth-of-type(6){
         display: block;
+      }
+
+      .section08 .row .col:nth-last-of-type(2){
+        margin-right: 3%;
       }
 
       .section08 .row .col:nth-last-of-type(1){
@@ -2391,7 +2406,8 @@
 
      .section09 .area2 .card{
       width: 50%;
-      display:flex
+      display:flex;
+      flex-flow:row nowrap
      }
 
      .section09 .area2 .card:nth-of-type(2){
@@ -2528,17 +2544,15 @@
         margin: auto;
         flex-flow: row nowrap;
         justify-content: space-between;
-        
        }
        
-
        .footer .col-copyright{
         width: 80%;
         text-align:left;
        }
 
        .footer .col-icons{
-        margin-top: 1rem;
+        margin-top: 2rem;
         width: 20%;
        }
 
@@ -3592,8 +3606,11 @@
       </div>
     </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
-  <script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
+ <script src="./umd/gsap.js"></script>
+ <script src="./umd/ScrollTrigger.js"></script>
+ <script>
+  // JQuery
     // $(window).resize(function() {
     //     const wdth=$(window).width();
     //     console.log(wdth)
@@ -3605,6 +3622,26 @@
     //   console.log($('.card-icons').css('left'))
     // });
 
+  //gsap
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({
+    scrollTrigger:{
+      trigger:'.nav_bar',
+      start:'bottom 10%',
+      end:'top top',
+      scrub:true,
+      toggleActions:'play none reverse none',
+      // markers:true
+    }
+  })
+
+  tl
+    .to('.pre_nav_bar',{
+      y:-1000
+    })
+    .to('.nav_bar',{
+      y:-50
+    })
     
   </script>
   </body>
